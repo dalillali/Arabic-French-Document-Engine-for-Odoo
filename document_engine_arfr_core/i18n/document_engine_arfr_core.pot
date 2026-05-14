@@ -1,0 +1,19 @@
+# Translation template for Arabic/French Document Engine - Core.
+# This placeholder is intentionally committed so CI can verify translation
+# extraction readiness before automated Odoo i18n export is wired to a live
+# Odoo database.
+msgid ""
+msgstr ""
+"Project-Id-Version: document_engine_arfr_core 19.0.1.0.0\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Enable Arabic/French Rendering"
+msgstr ""
+
+msgid "Arabic/French Numeral System"
+msgstr ""
+
+msgid "Arabic/French Currency Formatting"
+msgstr ""

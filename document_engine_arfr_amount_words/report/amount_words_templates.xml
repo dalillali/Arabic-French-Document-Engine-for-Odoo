@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="arfr_amount_in_words_block">
+        <section class="arfr-notes arfr-amount-words" dir="auto">
+            <h3 class="arfr-notes-title">
+                <span>المبلغ كتابة</span>
+                <small t-out="arfr_label('Amount in words', secondary_lang, record=o) if 'arfr_label' in globals() else 'Amount in words'"/>
+            </h3>
+            <p t-out="env['arfr.amount.words'].arfr_amount_in_words(o.amount_total, o.currency_id, lang='ar_001')"/>
+            <p t-out="env['arfr.amount.words'].arfr_amount_in_words(o.amount_total, o.currency_id, lang=secondary_lang or 'en')"/>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,31 @@
+{
+    "name": "Arabic/French Document Engine - Core",
+    "summary": "Core settings, assets, and helpers for Arabic/French documents",
+    "version": "19.0.1.0.0",
+    "category": "Accounting/Localizations",
+    "license": "LGPL-3",
+    "author": "Arabic/French Document Engine Contributors",
+    "website": "https://github.com/dalillali/Arabic-French-Document-Engine-for-Odoo",
+    "depends": ["base", "web"],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/arfr_currency_format_rules.xml",
+        "data/arfr_label_dictionary.xml",
+        "views/res_config_settings_views.xml",
+        "views/res_partner_views.xml",
+        "views/ir_actions_report_views.xml",
+        "views/arfr_bilingual_document_templates.xml",
+        "views/report_layout_views.xml",
+        "views/report_smoke_views.xml",
+        "wizard/arfr_diagnostics_views.xml",
+    ],
+    "assets": {
+        "web.report_assets_common": [
+            "document_engine_arfr_core/static/src/scss/report_fonts.scss",
+            "document_engine_arfr_core/static/src/scss/report_rtl.scss",
+            "document_engine_arfr_core/static/src/scss/report_currency.scss",
+        ],
+    },
+    "installable": True,
+    "application": False,
+}

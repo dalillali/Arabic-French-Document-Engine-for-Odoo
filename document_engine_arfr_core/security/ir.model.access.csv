@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_arfr_currency_format_rule_system,arfr.currency.format.rule system,model_arfr_currency_format_rule,base.group_system,1,1,1,1
+access_arfr_currency_format_rule_user,arfr.currency.format.rule user,model_arfr_currency_format_rule,base.group_user,1,0,0,0
+access_arfr_label_dictionary_system,arfr.label.dictionary system,model_arfr_label_dictionary,base.group_system,1,1,1,1
+access_arfr_label_dictionary_user,arfr.label.dictionary user,model_arfr_label_dictionary,base.group_user,1,0,0,0
+access_arfr_diagnostics_wizard_user,arfr.diagnostics.wizard user,model_arfr_diagnostics_wizard,base.group_user,1,1,1,1

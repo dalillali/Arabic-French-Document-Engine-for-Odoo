@@ -1,0 +1,13 @@
+{
+    "name": "Arabic/French Document Engine - GCC POS",
+    "summary": "GCC POS receipt rendering integration",
+    "version": "19.0.1.0.0",
+    "category": "Point of Sale",
+    "license": "LGPL-3",
+    "author": "Arabic/French Document Engine Contributors",
+    "website": "https://github.com/dalillali/Arabic-French-Document-Engine-for-Odoo",
+    "depends": ["document_engine_arfr_pos", "l10n_gcc_pos"],
+    "data": [],
+    "installable": True,
+    "application": False,
+}

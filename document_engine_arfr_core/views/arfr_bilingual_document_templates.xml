@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="arfr_bilingual_document">
+        <div class="page article arfr-document arfr-shell" dir="ltr">
+            <header class="arfr-topline">
+                <div class="arfr-title-side" dir="ltr">
+                    <h1 t-out="title_ltr"/>
+                    <p t-if="subtitle_ltr" t-out="subtitle_ltr"/>
+                    <div class="arfr-badge-row" t-if="pair_badge">
+                        <span class="arfr-badge" t-out="pair_badge"/>
+                    </div>
+                </div>
+                <div class="arfr-title-side" dir="auto" style="text-align:right;">
+                    <h1 t-out="title_ar"/>
+                    <p t-if="subtitle_ar" t-out="subtitle_ar"/>
+                    <div class="arfr-badge-row" t-if="numeral_badge">
+                        <span class="arfr-badge" t-out="numeral_badge"/>
+                    </div>
+                </div>
+            </header>
+
+            <t t-if="header_blocks" t-out="header_blocks"/>
+
+            <table t-if="line_table_spec" class="arfr-lines">
+                <thead>
+                    <tr>
+                        <t t-foreach="line_table_spec.get('columns', [])" t-as="column">
+                            <th t-att-class="column.get('class', '')">
+                                <span t-out="column.get('label_primary')"/>
+                                <small t-out="column.get('label_secondary')"/>
+                            </th>
+                        </t>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="line_table_spec.get('rows', [])" t-as="row">
+                        <tr>
+                            <t t-foreach="line_table_spec.get('columns', [])" t-as="column">
+                                <td t-att-class="column.get('cell_class', column.get('class', ''))" t-out="row.get(column.get('name'), '')"/>
+                            </t>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+
+            <t t-out="0"/>
+            <t t-if="totals_block" t-out="totals_block"/>
+            <t t-if="notes_block" t-out="notes_block"/>
+            <t t-if="signature_block" t-out="signature_block"/>
+
+            <footer class="arfr-footer">
+                <span t-out="_('Generated with Arabic/English + Arabic/French Document Engine')"/>
+            </footer>
+        </div>
+    </template>
+</odoo>

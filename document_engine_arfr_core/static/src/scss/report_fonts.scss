@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "ARFR Noto Naskh Arabic";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/document_engine_arfr_core/static/src/fonts/noto/NotoNaskhArabic-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "ARFR Noto Naskh Arabic";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/document_engine_arfr_core/static/src/fonts/noto/NotoNaskhArabic-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "ARFR Noto Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/document_engine_arfr_core/static/src/fonts/noto/NotoSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "ARFR Noto Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/document_engine_arfr_core/static/src/fonts/noto/NotoSans-Bold.ttf") format("truetype");
+}
+
+.arfr-report-fonts {
+    font-family: "DejaVu Sans", "ARFR Noto Naskh Arabic", "ARFR Noto Sans", sans-serif;
+}
+
+.arfr-report-fonts:lang(ar),
+.arfr-report-fonts [lang="ar"],
+.arfr-font-arabic {
+    font-family: "DejaVu Sans", "ARFR Noto Naskh Arabic", "ARFR Noto Sans", sans-serif;
+}

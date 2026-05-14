@@ -1,0 +1,49 @@
+Delivery Slip
+Arabic / French warehouse document
+Arabic / French
+ﺗﺴﻠﻴﻢ
+إﻳﺼﺎل
+ﻟﻠﻄﺒﺎﻋﺔ
+ﺟﺎﻫﺰ
+وﻓﺮﻧﺴﻲ
+ﻋﺮﺑﻲ
+ﺗﺴﻠﻴﻢ
+إﻳﺼﺎل
+RTL-aware quantities
+Client
+ARFR Demo Customer
+اﻟﻌﻤﻴﻞ
+Référence
+WH/OUT/00003
+Date prévue
+١٠:٠٠:٠٠ ١١-٠٥-٢٠٢٦
+اﻟﻤﺠﺪول
+اﻟﺘﺎرﻳﺦ
+Statut
+Ready
+اﻟﺼﻨﻒ
+Produit
+اﻟﻮﺻﻒ
+Description
+[ARFR-GOLD]
+conseil
+اﺳﺘﺸﺎرﻳﺔ
+ﺧﺪﻣﺔ
+/ Service
+Signature
+Service conseil
+/
+اﺳﺘﺸﺎرﻳﺔ
+ﺧﺪﻣﺔ
+اﻟﻤﻄﻠﻮب
+Demandé
+٢.٠
+Units
+اﻟﺮﻗﻢ
+اﻟﺤﺎﻟﺔ
+اﻟﻤﻨﺠﺰ
+Fait
+١.٠
+Units
+اﻟﺘﻮﻗﻴﻊ
+Generated with Arabic/English + Arabic/French Document Engine

@@ -1,0 +1,57 @@
+Invoice
+Bilingual business document
+Bilingual
+ﻓﺎﺗﻮرة
+ﻟﻠﻄﺒﺎﻋﺔ
+ﺟﺎﻫﺰة
+ﺛﺎﻧﻴﺔ
+وﻟﻐﺔ
+ﻋﺮﺑﻴﺔ
+ﻓﺎﺗﻮرة
+Smart numerals and regional currency
+Customer
+ARFR Demo Customer
+اﻟﻌﻤﻴﻞ
+Invoice Number
+Invoice Date
+١١-٠٥-٢٠٢٦
+اﻟﺘﺎرﻳﺦ
+Currency
+Draft
+USD
+اﻟﺮﻗﻢ
+اﻟﻌﻤﻠﺔ
+اﻟﻮﺻﻒ
+Description
+اﻟﻜﻤﻴﺔ
+Qty
+اﻟﻮﺣﺪة
+ﺳﻌﺮ
+Unit Price
+اﻟﺨﺼﻢ
+Discount
+اﻹﺟﻤﺎﻟﻲ
+Subtotal
+Service conseil
+/
+اﺳﺘﺸﺎرﻳﺔ
+ﺧﺪﻣﺔ
+٢.٠
+$ ٦١٧.٢٨
+٠.٠%
+$ ١,٢٣٤.٥٦
+Signature
+Untaxed
+Amount
+Tax
+Total
+$ ١,٢٣٤.٥٦
+$ ٠.٠٠
+$ ١,٢٣٤.٥٦
+ﻗﺒﻞ
+اﻟﻤﺒﻠﻎ
+اﻟﻀﺮﻳﺒﺔ
+اﻟﻀﺮﻳﺒﺔ
+اﻹﺟﻤﺎﻟﻲ
+اﻟﺘﻮﻗﻴﻊ
+Generated with Arabic/English + Arabic/French Document Engine

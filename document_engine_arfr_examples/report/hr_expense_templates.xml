@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_hr_expense_arfr_bilingual" model="ir.actions.report">
+        <field name="name">Bilingual Expense Arabic/French</field>
+        <field name="model">hr.expense</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">document_engine_arfr_examples.report_hr_expense_arfr_bilingual</field>
+        <field name="report_file">document_engine_arfr_examples.report_hr_expense_arfr_bilingual</field>
+        <field name="binding_model_id" ref="hr_expense.model_hr_expense"/>
+        <field name="binding_type">report</field>
+        <field name="arfr_enabled">1</field>
+        <field name="arfr_bilingual_pair">ar_fr</field>
+    </record>
+
+    <template id="report_hr_expense_arfr_bilingual">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="title_ar" t-value="'مصروف'"/>
+                <t t-set="title_ltr" t-value="'Expense'"/>
+                <t t-set="subtitle_ar" t-value="'مثال تقرير ثنائي اللغة'"/>
+                <t t-set="subtitle_ltr" t-value="'Generic bilingual mixin example'"/>
+                <t t-set="pair_badge" t-value="'Arabic / French'"/>
+                <t t-set="numeral_badge" t-value="'Generic AR/FR engine'"/>
+                <t t-set="header_blocks">
+                    <section class="arfr-meta-grid">
+                        <div class="arfr-meta-col">
+                            <div class="arfr-bilingual-row">
+                                <span class="arfr-label">Employee</span>
+                                <span class="arfr-value" t-out="o.employee_id.name"/>
+                                <span class="arfr-label arfr-label-rtl">الموظف</span>
+                            </div>
+                        </div>
+                        <div class="arfr-meta-col">
+                            <div class="arfr-bilingual-row">
+                                <span class="arfr-label">Amount</span>
+                                <span class="arfr-value" t-out="arfr_formatter.format_currency(o.total_amount, o.currency_id, record=o)"/>
+                                <span class="arfr-label arfr-label-rtl">المبلغ</span>
+                            </div>
+                        </div>
+                    </section>
+                </t>
+                <t t-set="line_table_spec" t-value="False"/>
+                <t t-set="totals_block" t-value="False"/>
+                <t t-set="notes_block" t-value="False"/>
+                <t t-set="signature_block" t-value="False"/>
+                <t t-call="document_engine_arfr_core.arfr_bilingual_document"/>
+            </t>
+        </t>
+    </template>
+</odoo>

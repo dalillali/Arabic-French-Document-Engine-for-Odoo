@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="currency_rule_sar" model="arfr.currency.format.rule">
+        <field name="currency_code">SAR</field>
+        <field name="symbol">ر.س</field>
+        <field name="position">after</field>
+        <field name="thousands_separator">٬</field>
+        <field name="decimal_separator">٫</field>
+    </record>
+    <record id="currency_rule_aed" model="arfr.currency.format.rule">
+        <field name="currency_code">AED</field>
+        <field name="symbol">د.إ</field>
+        <field name="position">after</field>
+        <field name="thousands_separator">٬</field>
+        <field name="decimal_separator">٫</field>
+    </record>
+    <record id="currency_rule_mad" model="arfr.currency.format.rule">
+        <field name="currency_code">MAD</field>
+        <field name="symbol">MAD</field>
+        <field name="position">after</field>
+        <field name="thousands_separator" eval="' '"/>
+        <field name="decimal_separator">,</field>
+    </record>
+    <record id="currency_rule_egp" model="arfr.currency.format.rule">
+        <field name="currency_code">EGP</field>
+        <field name="symbol">ج.م</field>
+        <field name="position">after</field>
+        <field name="thousands_separator">٬</field>
+        <field name="decimal_separator">٫</field>
+    </record>
+    <record id="currency_rule_eur" model="arfr.currency.format.rule">
+        <field name="currency_code">EUR</field>
+        <field name="symbol">€</field>
+        <field name="position">after</field>
+        <field name="thousands_separator" eval="' '"/>
+        <field name="decimal_separator">,</field>
+    </record>
+    <record id="currency_rule_kwd" model="arfr.currency.format.rule">
+        <field name="currency_code">KWD</field>
+        <field name="symbol">د.ك</field>
+        <field name="position">after</field>
+        <field name="thousands_separator">٬</field>
+        <field name="decimal_separator">٫</field>
+    </record>
+    <record id="currency_rule_qar" model="arfr.currency.format.rule">
+        <field name="currency_code">QAR</field>
+        <field name="symbol">ر.ق</field>
+        <field name="position">after</field>
+        <field name="thousands_separator">٬</field>
+        <field name="decimal_separator">٫</field>
+    </record>
+    <record id="currency_rule_omr" model="arfr.currency.format.rule">
+        <field name="currency_code">OMR</field>
+        <field name="symbol">ر.ع</field>
+        <field name="position">after</field>
+        <field name="thousands_separator">٬</field>
+        <field name="decimal_separator">٫</field>
+    </record>
+    <record id="currency_rule_bhd" model="arfr.currency.format.rule">
+        <field name="currency_code">BHD</field>
+        <field name="symbol">د.ب</field>
+        <field name="position">after</field>
+        <field name="thousands_separator">٬</field>
+        <field name="decimal_separator">٫</field>
+    </record>
+    <record id="currency_rule_tnd" model="arfr.currency.format.rule">
+        <field name="currency_code">TND</field>
+        <field name="symbol">د.ت</field>
+        <field name="position">after</field>
+        <field name="thousands_separator" eval="' '"/>
+        <field name="decimal_separator">,</field>
+    </record>
+    <record id="currency_rule_dzd" model="arfr.currency.format.rule">
+        <field name="currency_code">DZD</field>
+        <field name="symbol">د.ج</field>
+        <field name="position">after</field>
+        <field name="thousands_separator" eval="' '"/>
+        <field name="decimal_separator">,</field>
+    </record>
+    <record id="currency_rule_iqd" model="arfr.currency.format.rule">
+        <field name="currency_code">IQD</field>
+        <field name="symbol">د.ع</field>
+        <field name="position">after</field>
+        <field name="thousands_separator">٬</field>
+        <field name="decimal_separator">٫</field>
+    </record>
+    <record id="currency_rule_jod" model="arfr.currency.format.rule">
+        <field name="currency_code">JOD</field>
+        <field name="symbol">د.ا</field>
+        <field name="position">after</field>
+        <field name="thousands_separator">٬</field>
+        <field name="decimal_separator">٫</field>
+    </record>
+    <record id="currency_rule_lbp" model="arfr.currency.format.rule">
+        <field name="currency_code">LBP</field>
+        <field name="symbol">ل.ل</field>
+        <field name="position">after</field>
+        <field name="thousands_separator">٬</field>
+        <field name="decimal_separator">٫</field>
+    </record>
+</odoo>

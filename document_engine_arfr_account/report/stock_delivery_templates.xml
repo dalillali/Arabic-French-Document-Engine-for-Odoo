@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_delivery_arfr_bilingual_ar_fr" model="ir.actions.report">
+        <field name="name">Bilingual Delivery Slip Arabic/French</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">document_engine_arfr_account.report_delivery_arfr_bilingual_ar_fr</field>
+        <field name="report_file">document_engine_arfr_account.report_delivery_arfr_bilingual_ar_fr</field>
+        <field name="binding_model_id" ref="stock.model_stock_picking"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="document_engine_arfr_account.paperformat_arfr_premium_document"/>
+        <field name="arfr_enabled">1</field>
+        <field name="arfr_bilingual_pair">ar_fr</field>
+    </record>
+
+    <record id="action_report_delivery_arfr_bilingual_ar_en" model="ir.actions.report">
+        <field name="name">Bilingual Delivery Slip Arabic/English</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">document_engine_arfr_account.report_delivery_arfr_bilingual_ar_en</field>
+        <field name="report_file">document_engine_arfr_account.report_delivery_arfr_bilingual_ar_en</field>
+        <field name="binding_model_id" ref="stock.model_stock_picking"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="document_engine_arfr_account.paperformat_arfr_premium_document"/>
+        <field name="arfr_enabled">1</field>
+        <field name="arfr_bilingual_pair">ar_en</field>
+    </record>
+
+    <template id="report_delivery_arfr_body">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="partner" t-value="o.partner_id"/>
+                <t t-set="record" t-value="o"/>
+                <t t-set="header_blocks" t-value="False"/>
+                <t t-set="line_table_spec" t-value="False"/>
+                <t t-set="totals_block" t-value="False"/>
+                <t t-set="notes_block" t-value="False"/>
+                <t t-set="signature_block" t-value="False"/>
+                <t t-call="document_engine_arfr_core.arfr_bilingual_document">
+                    <t t-call="document_engine_arfr_account.arfr_document_style"/>
+                    <section class="arfr-meta-grid">
+                        <div class="arfr-meta-col">
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="customer_ltr"/>
+                                <t t-set="label_ar" t-value="'العميل'"/>
+                                <t t-set="value" t-value="o.partner_id.display_name"/>
+                            </t>
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="date_ltr"/>
+                                <t t-set="label_ar" t-value="'التاريخ المجدول'"/>
+                                <t t-set="value" t-value="arfr_format_numerals(o.scheduled_date or '', None, partner=partner)"/>
+                            </t>
+                        </div>
+                        <div class="arfr-meta-col">
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="number_ltr"/>
+                                <t t-set="label_ar" t-value="'الرقم'"/>
+                                <t t-set="value" t-value="o.name"/>
+                            </t>
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="status_ltr"/>
+                                <t t-set="label_ar" t-value="'الحالة'"/>
+                                <t t-set="value" t-value="dict(o._fields['state'].selection).get(o.state)"/>
+                            </t>
+                        </div>
+                    </section>
+
+                    <table class="arfr-lines">
+                        <thead>
+                            <tr>
+                                <th style="width:28%;"><span>الصنف</span><small t-out="product_ltr"/></th>
+                                <th style="width:46%;"><span>الوصف</span><small t-out="description_ltr"/></th>
+                                <th style="width:13%;"><span>المطلوب</span><small t-out="demand_ltr"/></th>
+                                <th style="width:13%;"><span>المنجز</span><small t-out="done_ltr"/></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.move_ids" t-as="line">
+                                <tr>
+                                    <td dir="auto"><span t-field="line.product_id.display_name"/></td>
+                                    <td class="arfr-description" dir="auto"><span t-field="line.description_picking"/></td>
+                                    <td class="arfr-numeric">
+                                        <t t-set="value" t-value="line.product_uom_qty"/>
+                                        <t t-call="document_engine_arfr_account.arfr_formatted_quantity"/>
+                                        <br/><span t-field="line.product_uom"/>
+                                    </td>
+                                    <td class="arfr-numeric">
+                                        <t t-set="value" t-value="line.quantity"/>
+                                        <t t-call="document_engine_arfr_account.arfr_formatted_quantity"/>
+                                        <br/><span t-field="line.product_uom"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <t t-set="note_value" t-value="o.note"/>
+                    <t t-call="document_engine_arfr_account.arfr_notes_block"/>
+                    <t t-call="document_engine_arfr_account.arfr_bilingual_signature"/>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_delivery_arfr_bilingual_ar_fr">
+        <t t-set="title_ar" t-value="'إيصال تسليم'"/>
+        <t t-set="title_ltr" t-value="_('Delivery Slip')"/>
+        <t t-set="subtitle_ar" t-value="'إيصال تسليم عربي وفرنسي جاهز للطباعة'"/>
+        <t t-set="subtitle_ltr" t-value="_('Arabic / French warehouse document')"/>
+        <t t-set="pair_badge" t-value="_('Arabic / French')"/>
+        <t t-set="numeral_badge" t-value="_('RTL-aware quantities')"/>
+        <t t-set="customer_ltr" t-value="_('Client')"/>
+        <t t-set="date_ltr" t-value="_('Date prévue')"/>
+        <t t-set="number_ltr" t-value="_('Référence')"/>
+        <t t-set="status_ltr" t-value="_('Statut')"/>
+        <t t-set="product_ltr" t-value="_('Produit')"/>
+        <t t-set="description_ltr" t-value="_('Description')"/>
+        <t t-set="demand_ltr" t-value="_('Demandé')"/>
+        <t t-set="done_ltr" t-value="_('Fait')"/>
+        <t t-set="notes_ltr" t-value="_('Notes')"/>
+        <t t-set="signature_ltr" t-value="_('Signature')"/>
+        <t t-call="document_engine_arfr_account.report_delivery_arfr_body"/>
+    </template>
+
+    <template id="report_delivery_arfr_bilingual_ar_en">
+        <t t-set="title_ar" t-value="'إيصال تسليم'"/>
+        <t t-set="title_ltr" t-value="_('Delivery Slip')"/>
+        <t t-set="subtitle_ar" t-value="'إيصال تسليم عربي وإنجليزي جاهز للطباعة'"/>
+        <t t-set="subtitle_ltr" t-value="_('Arabic / English warehouse document')"/>
+        <t t-set="pair_badge" t-value="_('Arabic / English')"/>
+        <t t-set="numeral_badge" t-value="_('RTL-aware quantities')"/>
+        <t t-set="customer_ltr" t-value="_('Customer')"/>
+        <t t-set="date_ltr" t-value="_('Scheduled Date')"/>
+        <t t-set="number_ltr" t-value="_('Delivery Reference')"/>
+        <t t-set="status_ltr" t-value="_('Status')"/>
+        <t t-set="product_ltr" t-value="_('Product')"/>
+        <t t-set="description_ltr" t-value="_('Description')"/>
+        <t t-set="demand_ltr" t-value="_('Demand')"/>
+        <t t-set="done_ltr" t-value="_('Done')"/>
+        <t t-set="notes_ltr" t-value="_('Notes')"/>
+        <t t-set="signature_ltr" t-value="_('Signature')"/>
+        <t t-call="document_engine_arfr_account.report_delivery_arfr_body"/>
+    </template>
+
+    <template id="report_delivery_document_arfr_direction" inherit_id="stock.report_delivery_document">
+        <xpath expr="//table[@name='stock_move_table']" position="attributes">
+            <attribute name="class" add="arfr-table arfr-direction-aware" separator=" "/>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_line_table']" position="attributes">
+            <attribute name="class" add="arfr-table arfr-direction-aware" separator=" "/>
+        </xpath>
+        <xpath expr="//table[@name='stock_backorder_table']" position="attributes">
+            <attribute name="class" add="arfr-table arfr-direction-aware" separator=" "/>
+        </xpath>
+        <xpath expr="//div[hasclass('page')]" position="attributes">
+            <attribute name="class" add="arfr-direction-aware" separator=" "/>
+        </xpath>
+    </template>
+</odoo>

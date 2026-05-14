@@ -1,0 +1,25 @@
+.pos-receipt.arfr-pos-receipt,
+.arfr-pos-receipt {
+    font-family: "ARFR Noto Sans", "ARFR Noto Naskh Arabic", sans-serif;
+}
+
+.arfr-pos-receipt {
+    .arfr-receipt-line,
+    .arfr-receipt-total,
+    .arfr-receipt-tax {
+        unicode-bidi: isolate;
+        overflow-wrap: anywhere;
+    }
+
+    &[dir="rtl"],
+    [dir="rtl"] {
+        text-align: right;
+    }
+
+    .arfr-money {
+        display: inline-flex;
+        gap: 0.2em;
+        white-space: nowrap;
+        unicode-bidi: isolate;
+    }
+}

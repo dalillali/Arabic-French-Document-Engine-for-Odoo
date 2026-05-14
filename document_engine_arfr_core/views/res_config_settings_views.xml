@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_arfr" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.arfr</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Arabic/French Documents" name="arfr_document_engine">
+                    <block title="Rendering Defaults" name="arfr_rendering_defaults">
+                        <setting string="Enable Arabic/French Document Engine">
+                            <field name="arfr_document_engine_enabled"/>
+                        </setting>
+                        <setting string="Default Numeral System">
+                            <field name="arfr_default_numeral_system"/>
+                        </setting>
+                        <setting string="Default Secondary Language">
+                            <field name="arfr_default_secondary_lang_id"/>
+                        </setting>
+                        <setting string="Default Bilingual Pair">
+                            <field name="arfr_default_bilingual_pair"/>
+                        </setting>
+                        <setting string="Default Font Family">
+                            <field name="arfr_default_font_family"/>
+                        </setting>
+                        <setting string="Currency Formatting Policy">
+                            <field name="arfr_currency_format_policy"/>
+                        </setting>
+                        <setting string="RTL Layout Policy">
+                            <field name="arfr_rtl_layout_policy"/>
+                        </setting>
+                        <setting string="Enable Arabic/French POS Receipts">
+                            <field name="arfr_pos_receipt_enabled"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_arfr_premium_document" model="report.paperformat">
+        <field name="name">AR/FR Premium Document</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">12</field>
+        <field name="margin_bottom">14</field>
+        <field name="margin_left">8</field>
+        <field name="margin_right">8</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <template id="arfr_document_style">
+        <style>
+            @page {
+                margin: 12mm 10mm 14mm;
+            }
+            body {
+                margin: 0;
+            }
+            .arfr-document {
+                font-family: "DejaVu Sans", "ARFR Noto Naskh Arabic", "ARFR Noto Sans", Arial, sans-serif;
+                color: #17212f;
+                font-size: 12px;
+                line-height: 1.42;
+            }
+            .arfr-shell {
+                padding: 0;
+            }
+            .arfr-topline {
+                display: table;
+                width: 100%;
+                border-bottom: 3px solid #23364f;
+                padding-bottom: 10px;
+                margin-bottom: 12px;
+            }
+            .arfr-title-side {
+                display: table-cell;
+                width: 50%;
+                vertical-align: top;
+            }
+            .arfr-title-side h1 {
+                margin: 0;
+                font-size: 25px;
+                line-height: 1.1;
+                color: #17212f;
+                font-weight: 800;
+            }
+            .arfr-title-side[dir="rtl"],
+            .arfr-label-rtl,
+            .arfr-notes-title span,
+            .arfr-signature-cell[dir="rtl"],
+            .arfr-lines th span {
+                font-family: "DejaVu Sans", "ARFR Noto Naskh Arabic", "ARFR Noto Sans", Arial, sans-serif;
+            }
+            .arfr-title-side p {
+                margin: 5px 0 0;
+                color: #5d6b7c;
+                font-size: 12px;
+            }
+            .arfr-badge-row {
+                margin-top: 7px;
+            }
+            .arfr-badge {
+                display: inline-block;
+                padding: 3px 8px;
+                border: 1px solid #c9d4e1;
+                border-radius: 999px;
+                background: #f4f7fb;
+                color: #526174;
+                font-size: 10px;
+                white-space: nowrap;
+            }
+            .arfr-meta-grid,
+            .arfr-bilingual-totals,
+            .arfr-notes,
+            .arfr-bilingual-signature {
+                border: 1px solid #d6dee8;
+                border-radius: 7px;
+                margin-bottom: 11px;
+                overflow: hidden;
+                page-break-inside: avoid;
+            }
+            .arfr-meta-grid {
+                display: table;
+                width: 100%;
+                background: #fbfcfe;
+            }
+            .arfr-meta-col {
+                display: table-cell;
+                width: 50%;
+                vertical-align: top;
+                padding: 6px 10px;
+            }
+            .arfr-meta-col + .arfr-meta-col {
+                border-left: 1px solid #e6ebf1;
+            }
+            .arfr-bilingual-row {
+                display: table;
+                width: 100%;
+                border-bottom: 1px solid #edf1f5;
+                min-height: 27px;
+            }
+            .arfr-bilingual-row:last-child {
+                border-bottom: 0;
+            }
+            .arfr-label,
+            .arfr-value {
+                display: table-cell;
+                vertical-align: middle;
+                padding: 5px 7px;
+            }
+            .arfr-label {
+                width: 29%;
+                color: #647184;
+                font-weight: 700;
+                font-size: 11px;
+            }
+            .arfr-value {
+                width: 42%;
+                text-align: center;
+                font-weight: 750;
+                color: #17212f;
+            }
+            .arfr-lines {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0 12px;
+                table-layout: fixed;
+            }
+            .arfr-lines thead {
+                display: table-header-group;
+            }
+            .arfr-lines th {
+                background: #eaf0f6;
+                border: 1px solid #cad5e1;
+                padding: 7px 6px;
+                color: #17212f;
+                font-size: 10.5px;
+                line-height: 1.2;
+                text-align: center;
+                vertical-align: middle;
+            }
+            .arfr-lines th span,
+            .arfr-lines th small,
+            .arfr-notes-title span,
+            .arfr-notes-title small {
+                display: block;
+            }
+            .arfr-lines th span,
+            .arfr-notes-title span {
+                font-weight: 800;
+            }
+            .arfr-lines th small,
+            .arfr-notes-title small {
+                color: #657286;
+                font-size: 9px;
+                margin-top: 2px;
+            }
+            .arfr-lines td {
+                border: 1px solid #d6dee8;
+                padding: 7px 6px;
+                vertical-align: top;
+                word-break: normal;
+            }
+            .arfr-col-description {
+                width: 44%;
+            }
+            .arfr-col-qty {
+                width: 11%;
+            }
+            .arfr-col-money {
+                width: 16%;
+            }
+            .arfr-col-discount {
+                width: 10%;
+            }
+            .arfr-description {
+                text-align: start;
+            }
+            .arfr-numeric {
+                text-align: center;
+                white-space: nowrap;
+            }
+            .arfr-number,
+            .arfr-money {
+                white-space: nowrap;
+                unicode-bidi: isolate;
+            }
+            .arfr-bilingual-totals {
+                width: 45%;
+                margin-left: auto;
+                background: #fbfcfe;
+            }
+            .arfr-bilingual-totals .arfr-bilingual-row:last-child {
+                background: #23364f;
+                color: #ffffff;
+            }
+            .arfr-bilingual-totals .arfr-bilingual-row:last-child .arfr-label,
+            .arfr-bilingual-totals .arfr-bilingual-row:last-child .arfr-value {
+                color: #ffffff;
+                font-size: 13px;
+            }
+            .arfr-notes {
+                padding: 10px 12px;
+                border-right: 5px solid #58708f;
+                background: #f8fafc;
+            }
+            .arfr-notes-title {
+                margin: 0 0 7px;
+                color: #17212f;
+                font-size: 13px;
+            }
+            .arfr-signature-grid {
+                display: table;
+                width: 100%;
+            }
+            .arfr-signature-cell {
+                display: table-cell;
+                width: 50%;
+                height: 58px;
+                padding: 9px 12px;
+                vertical-align: top;
+                color: #526174;
+                font-weight: 700;
+            }
+            .arfr-signature-cell + .arfr-signature-cell {
+                border-left: 1px solid #e6ebf1;
+            }
+            .arfr-footer {
+                margin-top: 10px;
+                padding-top: 7px;
+                border-top: 1px solid #e1e7ef;
+                color: #7a8797;
+                font-size: 10px;
+                text-align: center;
+            }
+        </style>
+    </template>
+
+    <template id="arfr_report_shell">
+        <t t-set="header_blocks" t-value="False"/>
+        <t t-set="line_table_spec" t-value="False"/>
+        <t t-set="totals_block" t-value="False"/>
+        <t t-set="notes_block" t-value="False"/>
+        <t t-set="signature_block" t-value="False"/>
+        <t t-call="document_engine_arfr_core.arfr_bilingual_document">
+            <t t-call="document_engine_arfr_account.arfr_document_style"/>
+            <t t-out="0"/>
+        </t>
+    </template>
+
+    <template id="arfr_bilingual_label_value">
+        <div class="arfr-bilingual-row">
+            <span class="arfr-label arfr-label-ltr" dir="ltr" t-out="label_ltr"/>
+            <span class="arfr-value" dir="auto" t-out="value"/>
+            <span class="arfr-label arfr-label-rtl" dir="auto" t-out="label_ar"/>
+        </div>
+    </template>
+
+    <template id="arfr_bilingual_totals">
+        <section class="arfr-bilingual-totals arfr-direction-aware">
+            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                <t t-set="label_ltr" t-value="untaxed_ltr"/>
+                <t t-set="label_ar" t-value="'المبلغ قبل الضريبة'"/>
+                <t t-set="value" t-value="arfr_format_currency(o.amount_untaxed, currency, None, partner=partner, record=o)"/>
+            </t>
+            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                <t t-set="label_ltr" t-value="tax_ltr"/>
+                <t t-set="label_ar" t-value="'الضريبة'"/>
+                <t t-set="value" t-value="arfr_format_currency(o.amount_tax, currency, None, partner=partner, record=o)"/>
+            </t>
+            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                <t t-set="label_ltr" t-value="total_ltr"/>
+                <t t-set="label_ar" t-value="'الإجمالي'"/>
+                <t t-set="value" t-value="arfr_format_currency(o.amount_total, currency, None, partner=partner, record=o)"/>
+            </t>
+        </section>
+    </template>
+
+    <template id="arfr_notes_block">
+        <t t-if="note_value">
+            <section class="arfr-notes" dir="auto">
+                <h3 class="arfr-notes-title">
+                    <span>ملاحظات</span>
+                    <small t-out="notes_ltr"/>
+                </h3>
+                <span t-out="note_value"/>
+            </section>
+        </t>
+    </template>
+
+    <template id="arfr_bilingual_signature">
+        <section class="arfr-bilingual-signature arfr-signature-block arfr-direction-aware">
+            <div class="arfr-signature-grid">
+                <div class="arfr-signature-cell" dir="ltr" t-out="signature_ltr"/>
+                <div class="arfr-signature-cell" dir="auto">التوقيع</div>
+            </div>
+        </section>
+    </template>
+
+    <template id="arfr_formatted_quantity">
+        <span class="arfr-number" t-out="arfr_format_numerals(value, None, partner=partner, record=record)"/>
+    </template>
+
+    <template id="arfr_formatted_amount">
+        <span class="arfr-money arfr-amount" t-out="arfr_format_currency(value, currency, None, partner=partner, record=record)"/>
+    </template>
+
+    <template id="arfr_formatted_tax">
+        <span class="arfr-tax" t-out="arfr_format_numerals(value, None, partner=partner, record=record)"/>
+    </template>
+</odoo>

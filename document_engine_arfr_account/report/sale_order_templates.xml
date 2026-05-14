@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_saleorder_arfr_bilingual_ar_fr" model="ir.actions.report">
+        <field name="name">Bilingual Quotation Arabic/French</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">document_engine_arfr_account.report_saleorder_arfr_bilingual_ar_fr</field>
+        <field name="report_file">document_engine_arfr_account.report_saleorder_arfr_bilingual_ar_fr</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="document_engine_arfr_account.paperformat_arfr_premium_document"/>
+        <field name="arfr_enabled">1</field>
+        <field name="arfr_bilingual_pair">ar_fr</field>
+    </record>
+
+    <record id="action_report_saleorder_arfr_bilingual_ar_en" model="ir.actions.report">
+        <field name="name">Bilingual Quotation Arabic/English</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">document_engine_arfr_account.report_saleorder_arfr_bilingual_ar_en</field>
+        <field name="report_file">document_engine_arfr_account.report_saleorder_arfr_bilingual_ar_en</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="document_engine_arfr_account.paperformat_arfr_premium_document"/>
+        <field name="arfr_enabled">1</field>
+        <field name="arfr_bilingual_pair">ar_en</field>
+    </record>
+
+    <template id="report_saleorder_arfr_body">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="partner" t-value="o.partner_id"/>
+                <t t-set="record" t-value="o"/>
+                <t t-set="currency" t-value="o.currency_id"/>
+                <t t-set="header_blocks" t-value="False"/>
+                <t t-set="line_table_spec" t-value="False"/>
+                <t t-set="totals_block" t-value="False"/>
+                <t t-set="notes_block" t-value="False"/>
+                <t t-set="signature_block" t-value="False"/>
+                <t t-call="document_engine_arfr_core.arfr_bilingual_document">
+                    <t t-call="document_engine_arfr_account.arfr_document_style"/>
+                    <section class="arfr-meta-grid">
+                        <div class="arfr-meta-col">
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="customer_ltr"/>
+                                <t t-set="label_ar" t-value="'العميل'"/>
+                                <t t-set="value" t-value="o.partner_id.display_name"/>
+                            </t>
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="date_ltr"/>
+                                <t t-set="label_ar" t-value="'التاريخ'"/>
+                                <t t-set="value" t-value="arfr_format_numerals(o.date_order.date() if o.date_order else '', None, partner=partner)"/>
+                            </t>
+                        </div>
+                        <div class="arfr-meta-col">
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="number_ltr"/>
+                                <t t-set="label_ar" t-value="'الرقم'"/>
+                                <t t-set="value" t-value="o.name"/>
+                            </t>
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="currency_ltr"/>
+                                <t t-set="label_ar" t-value="'العملة'"/>
+                                <t t-set="value" t-value="currency.name"/>
+                            </t>
+                        </div>
+                    </section>
+
+                    <table class="arfr-lines">
+                        <thead>
+                            <tr>
+                                <th class="arfr-col-description"><span>الوصف</span><small t-out="description_ltr"/></th>
+                                <th class="arfr-col-qty"><span>الكمية</span><small t-out="quantity_ltr"/></th>
+                                <th class="arfr-col-money"><span>سعر الوحدة</span><small t-out="unit_price_ltr"/></th>
+                                <th class="arfr-col-discount"><span>الخصم</span><small t-out="discount_ltr"/></th>
+                                <th class="arfr-col-money"><span>الإجمالي</span><small t-out="subtotal_ltr"/></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.order_line" t-as="line">
+                                <tr t-if="not line.display_type">
+                                    <td class="arfr-description" dir="auto"><span t-field="line.name"/></td>
+                                    <td class="arfr-numeric"><t t-set="value" t-value="line.product_uom_qty"/><t t-call="document_engine_arfr_account.arfr_formatted_quantity"/></td>
+                                    <td class="arfr-numeric"><t t-set="value" t-value="line.price_unit"/><t t-call="document_engine_arfr_account.arfr_formatted_amount"/></td>
+                                    <td class="arfr-numeric"><span class="arfr-number" t-out="arfr_format_numerals(line.discount, None, partner=partner)"/>%</td>
+                                    <td class="arfr-numeric"><t t-set="value" t-value="line.price_subtotal"/><t t-call="document_engine_arfr_account.arfr_formatted_amount"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <t t-call="document_engine_arfr_account.arfr_bilingual_totals"/>
+                    <t t-set="note_value" t-value="o.note"/>
+                    <t t-call="document_engine_arfr_account.arfr_notes_block"/>
+                    <t t-call="document_engine_arfr_account.arfr_bilingual_signature"/>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_saleorder_arfr_bilingual_ar_fr">
+        <t t-set="title_ar" t-value="'عرض سعر'"/>
+        <t t-set="title_ltr" t-value="_('Quotation')"/>
+        <t t-set="subtitle_ar" t-value="'عرض سعر عربي وفرنسي جاهز للطباعة'"/>
+        <t t-set="subtitle_ltr" t-value="_('Arabic / French commercial offer')"/>
+        <t t-set="pair_badge" t-value="_('Arabic / French')"/>
+        <t t-set="numeral_badge" t-value="_('Smart numerals and regional currency')"/>
+        <t t-set="customer_ltr" t-value="_('Client')"/>
+        <t t-set="date_ltr" t-value="_('Date du devis')"/>
+        <t t-set="number_ltr" t-value="_('Numéro du devis')"/>
+        <t t-set="currency_ltr" t-value="_('Devise')"/>
+        <t t-set="description_ltr" t-value="_('Description')"/>
+        <t t-set="quantity_ltr" t-value="_('Qté')"/>
+        <t t-set="unit_price_ltr" t-value="_('Prix unitaire')"/>
+        <t t-set="discount_ltr" t-value="_('Remise')"/>
+        <t t-set="subtotal_ltr" t-value="_('Sous-total')"/>
+        <t t-set="untaxed_ltr" t-value="_('Montant HT')"/>
+        <t t-set="tax_ltr" t-value="_('Taxe')"/>
+        <t t-set="total_ltr" t-value="_('Total')"/>
+        <t t-set="notes_ltr" t-value="_('Notes')"/>
+        <t t-set="signature_ltr" t-value="_('Signature')"/>
+        <t t-call="document_engine_arfr_account.report_saleorder_arfr_body"/>
+    </template>
+
+    <template id="report_saleorder_arfr_bilingual_ar_en">
+        <t t-set="title_ar" t-value="'عرض سعر'"/>
+        <t t-set="title_ltr" t-value="_('Quotation')"/>
+        <t t-set="subtitle_ar" t-value="'عرض سعر عربي وإنجليزي جاهز للطباعة'"/>
+        <t t-set="subtitle_ltr" t-value="_('Arabic / English commercial offer')"/>
+        <t t-set="pair_badge" t-value="_('Arabic / English')"/>
+        <t t-set="numeral_badge" t-value="_('Smart numerals and regional currency')"/>
+        <t t-set="customer_ltr" t-value="_('Customer')"/>
+        <t t-set="date_ltr" t-value="_('Quotation Date')"/>
+        <t t-set="number_ltr" t-value="_('Quotation Number')"/>
+        <t t-set="currency_ltr" t-value="_('Currency')"/>
+        <t t-set="description_ltr" t-value="_('Description')"/>
+        <t t-set="quantity_ltr" t-value="_('Qty')"/>
+        <t t-set="unit_price_ltr" t-value="_('Unit Price')"/>
+        <t t-set="discount_ltr" t-value="_('Discount')"/>
+        <t t-set="subtotal_ltr" t-value="_('Subtotal')"/>
+        <t t-set="untaxed_ltr" t-value="_('Untaxed Amount')"/>
+        <t t-set="tax_ltr" t-value="_('Tax')"/>
+        <t t-set="total_ltr" t-value="_('Total')"/>
+        <t t-set="notes_ltr" t-value="_('Notes')"/>
+        <t t-set="signature_ltr" t-value="_('Signature')"/>
+        <t t-call="document_engine_arfr_account.report_saleorder_arfr_body"/>
+    </template>
+
+    <template id="report_saleorder_document_arfr_direction" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//table[hasclass('o_main_table')]" position="attributes">
+            <attribute name="class" add="arfr-table arfr-direction-aware" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@name='signature']" position="attributes">
+            <attribute name="class" add="arfr-signature-block arfr-direction-aware" separator=" "/>
+        </xpath>
+    </template>
+</odoo>

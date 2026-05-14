@@ -1,0 +1,57 @@
+Purchase Order
+Arabic / French supplier document
+Arabic / French
+Fournisseur
+ARFR Golden Vendor
+اﻟﻤﻮرد
+Référence
+اﻟﺘﺎرﻳﺦ
+Devise
+Date de
+commande
+١١-٠٥-٢٠٢٦
+اﻟﻮﺻﻒ
+Description
+ﺷﺮاء
+أﻣﺮ
+ﻟﻠﻄﺒﺎﻋﺔ
+ﺟﺎﻫﺰ
+وﻓﺮﻧﺴﻲ
+ﻋﺮﺑﻲ ﺷﺮاء
+أﻣﺮ
+Smart numerals and regional currency
+P00003
+USD
+اﻟﺮﻗﻢ
+اﻟﻌﻤﻠﺔ
+Service conseil
+/
+اﺳﺘﺸﺎرﻳﺔ
+ﺧﺪﻣﺔ
+٢.٠
+$ ٦١٧.٢٨
+اﻟﻜﻤﻴﺔ
+Qté
+اﻟﻮﺣﺪة
+ﺳﻌﺮ
+Prix unitaire
+Montant HT
+$ ١,٢٣٤.٥٦
+Taxe
+Total
+$ ٠.٠٠
+$ ١,٢٣٤.٥٦
+اﻹﺟﻤﺎﻟﻲ
+Sous-total
+$ ١,٢٣٤.٥٦
+ﻗﺒﻞ
+اﻟﻤﺒﻠﻎ
+اﻟﻀﺮﻳﺒﺔ
+اﻟﻀﺮﻳﺒﺔ
+اﻹﺟﻤﺎﻟﻲ
+ﻣﻼﺣﻈﺎت
+Notes
+.Bon de commande bilingue
+Signature
+اﻟﺘﻮﻗﻴﻊ
+Generated with Arabic/English + Arabic/French Document Engine

@@ -1,0 +1,60 @@
+Quotation
+Arabic / French commercial offer
+Arabic / French
+ﺳﻌﺮ
+ﻋﺮض
+ﻟﻠﻄﺒﺎﻋﺔ
+ﺟﺎﻫﺰ
+وﻓﺮﻧﺴﻲ
+ﻋﺮﺑﻲ ﺳﻌﺮ
+ﻋﺮض
+Smart numerals and regional currency
+Client
+ARFR Demo Customer
+Date du devis
+١١-٠٥-٢٠٢٦
+اﻟﻌﻤﻴﻞ
+اﻟﺘﺎرﻳﺦ
+Numéro du
+devis
+Devise
+S00003
+USD
+اﻟﺮﻗﻢ
+اﻟﻌﻤﻠﺔ
+اﻟﻮﺻﻒ
+Description
+اﻟﻜﻤﻴﺔ
+Qté
+اﻟﻮﺣﺪة
+ﺳﻌﺮ
+Prix unitaire
+Service conseil
+/
+اﺳﺘﺸﺎرﻳﺔ
+ﺧﺪﻣﺔ
+٢.٠
+$ ٦١٧.٢٨
+اﻟﺨﺼﻢ
+Remise
+٠.٠%
+اﻹﺟﻤﺎﻟﻲ
+Sous-total
+$ ١,٢٣٤.٥٦
+Montant HT
+$ ١,٢٣٤.٥٦
+Taxe
+Total
+$ ٠.٠٠
+$ ١,٢٣٤.٥٦
+ﻗﺒﻞ
+اﻟﻤﺒﻠﻎ
+اﻟﻀﺮﻳﺒﺔ
+اﻟﻀﺮﻳﺒﺔ
+اﻹﺟﻤﺎﻟﻲ
+ﻣﻼﺣﻈﺎت
+Notes
+.Conditions bilingues de reference
+Signature
+اﻟﺘﻮﻗﻴﻊ
+Generated with Arabic/English + Arabic/French Document Engine

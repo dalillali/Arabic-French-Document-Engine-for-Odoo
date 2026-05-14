@@ -1,0 +1,26 @@
+{
+    "name": "Arabic/French Document Engine - Account Documents",
+    "summary": "Arabic/French rendering for invoices, orders, and delivery documents",
+    "version": "19.0.1.0.0",
+    "category": "Accounting/Localizations",
+    "license": "LGPL-3",
+    "author": "Arabic/French Document Engine Contributors",
+    "website": "https://github.com/dalillali/Arabic-French-Document-Engine-for-Odoo",
+    "depends": [
+        "document_engine_arfr_core",
+        "account",
+        "sale",
+        "purchase",
+        "stock",
+    ],
+    "data": [
+        "report/bilingual_blocks.xml",
+        "report/account_invoice_templates.xml",
+        "report/sale_order_templates.xml",
+        "report/purchase_order_templates.xml",
+        "report/stock_delivery_templates.xml",
+        "report/custom_engine_demo.xml",
+    ],
+    "installable": True,
+    "application": False,
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_arfr_diagnostics_wizard_form" model="ir.ui.view">
+        <field name="name">arfr.diagnostics.wizard.form</field>
+        <field name="model">arfr.diagnostics.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Resolved AR/FR Preferences">
+                <group>
+                    <field name="record_ref"/>
+                    <field name="resolved_preferences" nolabel="1" widget="text"/>
+                </group>
+                <footer>
+                    <button string="Close" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_arfr_diagnostics_wizard" model="ir.actions.server">
+        <field name="name">Show resolved AR/FR preferences</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="binding_model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">action = env["arfr.diagnostics.wizard"].action_show_for_record()</field>
+    </record>
+</odoo>

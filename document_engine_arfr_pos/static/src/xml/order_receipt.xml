@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="document_engine_arfr_pos.OrderReceipt"
+       t-inherit="point_of_sale.OrderReceipt"
+       t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('pos-receipt')]" position="attributes">
+            <attribute name="t-att-class">props.basic_receipt ? 'pos-receipt p-2 ' + arfrReceiptClass : 'pos-receipt p-2 ' + arfrReceiptClass</attribute>
+            <attribute name="t-att-dir">arfrReceiptDirection</attribute>
+        </xpath>
+        <xpath expr="//span[@t-out='formatCurrency(order.priceExcl)']" position="attributes">
+            <attribute name="t-out">arfrReceiptEnabled ? arfrFormatAmount(order.priceExcl) : formatCurrency(order.priceExcl)</attribute>
+            <attribute name="class" add="arfr-money" separator=" "/>
+        </xpath>
+        <xpath expr="//span[@t-esc='formatCurrency(tax_group.base_amount_currency)']" position="attributes">
+            <attribute name="t-esc">arfrReceiptEnabled ? arfrFormatAmount(tax_group.base_amount_currency) : formatCurrency(tax_group.base_amount_currency)</attribute>
+            <attribute name="class" add="arfr-money" separator=" "/>
+        </xpath>
+        <xpath expr="//span[@t-out='formatCurrency(tax_group.tax_amount_currency)']" position="attributes">
+            <attribute name="t-out">arfrReceiptEnabled ? arfrFormatAmount(tax_group.tax_amount_currency) : formatCurrency(tax_group.tax_amount_currency)</attribute>
+            <attribute name="class" add="arfr-money" separator=" "/>
+        </xpath>
+        <xpath expr="//span[@t-out='order.currencyDisplayPriceIncl']" position="attributes">
+            <attribute name="t-out">arfrReceiptEnabled ? arfrFormatAmount(order.priceIncl) : order.currencyDisplayPriceIncl</attribute>
+            <attribute name="class" add="arfr-money" separator=" "/>
+        </xpath>
+        <xpath expr="//span[@t-out='formatCurrency(order.appliedRounding)']" position="attributes">
+            <attribute name="t-out">arfrReceiptEnabled ? arfrFormatAmount(order.appliedRounding) : formatCurrency(order.appliedRounding)</attribute>
+            <attribute name="class" add="arfr-money" separator=" "/>
+        </xpath>
+        <xpath expr="//span[@t-out='formatCurrency(order.totalDue)']" position="attributes">
+            <attribute name="t-out">arfrReceiptEnabled ? arfrFormatAmount(order.totalDue) : formatCurrency(order.totalDue)</attribute>
+            <attribute name="class" add="arfr-money" separator=" "/>
+        </xpath>
+        <xpath expr="//span[@t-out='formatCurrency(line.getAmount())']" position="attributes">
+            <attribute name="t-out">arfrReceiptEnabled ? arfrFormatAmount(line.getAmount()) : formatCurrency(line.getAmount())</attribute>
+            <attribute name="class" add="arfr-money" separator=" "/>
+        </xpath>
+        <xpath expr="//span[@t-out='formatCurrency(order.change)']" position="attributes">
+            <attribute name="t-out">arfrReceiptEnabled ? arfrFormatAmount(order.change) : formatCurrency(order.change)</attribute>
+            <attribute name="class" add="arfr-money" separator=" "/>
+        </xpath>
+        <xpath expr="//span[@t-out='formatCurrency(totalDiscount)']" position="attributes">
+            <attribute name="t-out">arfrReceiptEnabled ? arfrFormatAmount(totalDiscount) : formatCurrency(totalDiscount)</attribute>
+            <attribute name="class" add="arfr-money" separator=" "/>
+        </xpath>
+    </t>
+</templates>

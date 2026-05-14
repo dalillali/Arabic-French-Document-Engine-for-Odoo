@@ -1,0 +1,50 @@
+.arfr-report-root {
+    --arfr-inline-start: left;
+    --arfr-inline-end: right;
+}
+
+.arfr-report-root[dir="rtl"],
+[dir="rtl"] .arfr-report-root,
+.arfr-dir-rtl {
+    --arfr-inline-start: right;
+    --arfr-inline-end: left;
+    direction: rtl;
+    unicode-bidi: isolate;
+}
+
+.arfr-dir-ltr {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+.arfr-direction-aware {
+    direction: inherit;
+    unicode-bidi: isolate;
+}
+
+.arfr-table {
+    direction: inherit;
+}
+
+.arfr-table th,
+.arfr-table td,
+.arfr-text-start {
+    text-align: var(--arfr-inline-start);
+}
+
+.arfr-text-end,
+.arfr-total-block,
+.arfr-signature-block {
+    text-align: var(--arfr-inline-end);
+}
+
+.arfr-bidi-isolate {
+    unicode-bidi: isolate;
+}
+
+.arfr-address-block,
+.arfr-header-block,
+.arfr-notes-block {
+    direction: inherit;
+    unicode-bidi: isolate;
+}

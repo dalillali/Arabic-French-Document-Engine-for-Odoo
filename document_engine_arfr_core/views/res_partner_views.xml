@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_arfr" model="ir.ui.view">
+        <field name="name">res.partner.form.arfr</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Document Rendering" name="arfr_document_rendering">
+                    <group>
+                        <field name="arfr_numeral_system"/>
+                        <field name="arfr_secondary_lang_id"/>
+                        <field name="arfr_bilingual_pair"/>
+                        <field name="arfr_currency_format_policy"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

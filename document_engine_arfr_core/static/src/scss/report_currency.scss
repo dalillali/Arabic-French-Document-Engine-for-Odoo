@@ -1,0 +1,24 @@
+.arfr-report-root {
+    .arfr-money {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.25em;
+        white-space: nowrap;
+        unicode-bidi: isolate;
+    }
+
+    .arfr-currency-symbol,
+    .arfr-currency-amount {
+        white-space: nowrap;
+    }
+
+    [dir="rtl"] .arfr-money,
+    .arfr-rtl .arfr-money {
+        direction: rtl;
+    }
+
+    [dir="ltr"] .arfr-money,
+    .arfr-ltr .arfr-money {
+        direction: ltr;
+    }
+}

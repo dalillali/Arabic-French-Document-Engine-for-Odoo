@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_partner_arfr_engine_demo" model="ir.actions.report">
+        <field name="name">Bilingual Partner Card Engine Demo</field>
+        <field name="model">res.partner</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">document_engine_arfr_account.report_partner_arfr_engine_demo</field>
+        <field name="report_file">document_engine_arfr_account.report_partner_arfr_engine_demo</field>
+        <field name="binding_model_id" ref="base.model_res_partner"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="document_engine_arfr_account.paperformat_arfr_premium_document"/>
+        <field name="arfr_enabled">1</field>
+        <field name="arfr_bilingual_pair">ar_en</field>
+    </record>
+
+    <template id="report_partner_arfr_engine_demo">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="partner" t-value="o"/>
+                <t t-set="title_ar" t-value="'بطاقة شريك'"/>
+                <t t-set="title_ltr" t-value="_('Partner Card')"/>
+                <t t-set="subtitle_ar" t-value="'مثال لمطور يستخدم مكونات المحرك'"/>
+                <t t-set="subtitle_ltr" t-value="_('Developer demo using shared engine blocks')"/>
+                <t t-set="pair_badge" t-value="_('Arabic / English')"/>
+                <t t-set="numeral_badge" t-value="_('Opt-in custom report')"/>
+                <t t-call="document_engine_arfr_account.arfr_report_shell">
+                    <section class="arfr-meta-grid">
+                        <div class="arfr-meta-col">
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="_('Partner')"/>
+                                <t t-set="label_ar" t-value="'الشريك'"/>
+                                <t t-set="value" t-value="o.display_name"/>
+                            </t>
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="_('Country')"/>
+                                <t t-set="label_ar" t-value="'الدولة'"/>
+                                <t t-set="value" t-value="o.country_id.name or ''"/>
+                            </t>
+                        </div>
+                        <div class="arfr-meta-col">
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="_('Phone')"/>
+                                <t t-set="label_ar" t-value="'الهاتف'"/>
+                                <t t-set="value" t-value="o.phone or ''"/>
+                            </t>
+                            <t t-call="document_engine_arfr_account.arfr_bilingual_label_value">
+                                <t t-set="label_ltr" t-value="_('Email')"/>
+                                <t t-set="label_ar" t-value="'البريد الإلكتروني'"/>
+                                <t t-set="value" t-value="o.email or ''"/>
+                            </t>
+                        </div>
+                    </section>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

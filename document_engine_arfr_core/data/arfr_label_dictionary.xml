@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="label_fr_customer" model="arfr.label.dictionary"><field name="source">Customer</field><field name="lang_code">fr_FR</field><field name="translation">Client</field></record>
+    <record id="label_fr_invoice_date" model="arfr.label.dictionary"><field name="source">Invoice Date</field><field name="lang_code">fr_FR</field><field name="translation">Date de facture</field></record>
+    <record id="label_fr_invoice_number" model="arfr.label.dictionary"><field name="source">Invoice Number</field><field name="lang_code">fr_FR</field><field name="translation">Numéro</field></record>
+    <record id="label_fr_currency" model="arfr.label.dictionary"><field name="source">Currency</field><field name="lang_code">fr_FR</field><field name="translation">Devise</field></record>
+    <record id="label_fr_description" model="arfr.label.dictionary"><field name="source">Description</field><field name="lang_code">fr_FR</field><field name="translation">Description</field></record>
+    <record id="label_fr_qty" model="arfr.label.dictionary"><field name="source">Qty</field><field name="lang_code">fr_FR</field><field name="translation">Qté</field></record>
+    <record id="label_fr_unit_price" model="arfr.label.dictionary"><field name="source">Unit Price</field><field name="lang_code">fr_FR</field><field name="translation">Prix unitaire</field></record>
+    <record id="label_fr_discount" model="arfr.label.dictionary"><field name="source">Discount</field><field name="lang_code">fr_FR</field><field name="translation">Remise</field></record>
+    <record id="label_fr_subtotal" model="arfr.label.dictionary"><field name="source">Subtotal</field><field name="lang_code">fr_FR</field><field name="translation">Sous-total</field></record>
+    <record id="label_fr_untaxed" model="arfr.label.dictionary"><field name="source">Untaxed Amount</field><field name="lang_code">fr_FR</field><field name="translation">Montant HT</field></record>
+    <record id="label_fr_tax" model="arfr.label.dictionary"><field name="source">Tax</field><field name="lang_code">fr_FR</field><field name="translation">Taxe</field></record>
+    <record id="label_fr_total" model="arfr.label.dictionary"><field name="source">Total</field><field name="lang_code">fr_FR</field><field name="translation">Total</field></record>
+    <record id="label_fr_notes" model="arfr.label.dictionary"><field name="source">Notes</field><field name="lang_code">fr_FR</field><field name="translation">Notes</field></record>
+    <record id="label_fr_signature" model="arfr.label.dictionary"><field name="source">Signature</field><field name="lang_code">fr_FR</field><field name="translation">Signature</field></record>
+    <record id="label_fr_invoice" model="arfr.label.dictionary"><field name="source">Invoice</field><field name="lang_code">fr_FR</field><field name="translation">Facture</field></record>
+    <record id="label_fr_bilingual" model="arfr.label.dictionary"><field name="source">Bilingual</field><field name="lang_code">fr_FR</field><field name="translation">Bilingue</field></record>
+    <record id="label_fr_business_doc" model="arfr.label.dictionary"><field name="source">Bilingual business document</field><field name="lang_code">fr_FR</field><field name="translation">Document commercial bilingue</field></record>
+    <record id="label_fr_smart_numerals" model="arfr.label.dictionary"><field name="source">Smart numerals and regional currency</field><field name="lang_code">fr_FR</field><field name="translation">Numération intelligente et devise régionale</field></record>
+
+    <record id="label_es_customer" model="arfr.label.dictionary"><field name="source">Customer</field><field name="lang_code">es_ES</field><field name="translation">Cliente</field></record>
+    <record id="label_es_invoice_date" model="arfr.label.dictionary"><field name="source">Invoice Date</field><field name="lang_code">es_ES</field><field name="translation">Fecha de factura</field></record>
+    <record id="label_es_invoice_number" model="arfr.label.dictionary"><field name="source">Invoice Number</field><field name="lang_code">es_ES</field><field name="translation">Número de factura</field></record>
+    <record id="label_es_currency" model="arfr.label.dictionary"><field name="source">Currency</field><field name="lang_code">es_ES</field><field name="translation">Moneda</field></record>
+    <record id="label_es_description" model="arfr.label.dictionary"><field name="source">Description</field><field name="lang_code">es_ES</field><field name="translation">Descripción</field></record>
+    <record id="label_es_qty" model="arfr.label.dictionary"><field name="source">Qty</field><field name="lang_code">es_ES</field><field name="translation">Cant.</field></record>
+    <record id="label_es_unit_price" model="arfr.label.dictionary"><field name="source">Unit Price</field><field name="lang_code">es_ES</field><field name="translation">Precio unitario</field></record>
+    <record id="label_es_discount" model="arfr.label.dictionary"><field name="source">Discount</field><field name="lang_code">es_ES</field><field name="translation">Descuento</field></record>
+    <record id="label_es_subtotal" model="arfr.label.dictionary"><field name="source">Subtotal</field><field name="lang_code">es_ES</field><field name="translation">Subtotal</field></record>
+    <record id="label_es_untaxed" model="arfr.label.dictionary"><field name="source">Untaxed Amount</field><field name="lang_code">es_ES</field><field name="translation">Base imponible</field></record>
+    <record id="label_es_tax" model="arfr.label.dictionary"><field name="source">Tax</field><field name="lang_code">es_ES</field><field name="translation">Impuesto</field></record>
+    <record id="label_es_total" model="arfr.label.dictionary"><field name="source">Total</field><field name="lang_code">es_ES</field><field name="translation">Total</field></record>
+    <record id="label_es_notes" model="arfr.label.dictionary"><field name="source">Notes</field><field name="lang_code">es_ES</field><field name="translation">Notas</field></record>
+    <record id="label_es_signature" model="arfr.label.dictionary"><field name="source">Signature</field><field name="lang_code">es_ES</field><field name="translation">Firma</field></record>
+    <record id="label_es_invoice" model="arfr.label.dictionary"><field name="source">Invoice</field><field name="lang_code">es_ES</field><field name="translation">Factura</field></record>
+    <record id="label_es_bilingual" model="arfr.label.dictionary"><field name="source">Bilingual</field><field name="lang_code">es_ES</field><field name="translation">Bilingüe</field></record>
+    <record id="label_es_business_doc" model="arfr.label.dictionary"><field name="source">Bilingual business document</field><field name="lang_code">es_ES</field><field name="translation">Documento comercial bilingüe</field></record>
+    <record id="label_es_smart_numerals" model="arfr.label.dictionary"><field name="source">Smart numerals and regional currency</field><field name="lang_code">es_ES</field><field name="translation">Numeración inteligente y moneda regional</field></record>
+
+    <record id="label_de_customer" model="arfr.label.dictionary"><field name="source">Customer</field><field name="lang_code">de_DE</field><field name="translation">Kunde</field></record>
+    <record id="label_de_invoice_date" model="arfr.label.dictionary"><field name="source">Invoice Date</field><field name="lang_code">de_DE</field><field name="translation">Rechnungsdatum</field></record>
+    <record id="label_de_invoice_number" model="arfr.label.dictionary"><field name="source">Invoice Number</field><field name="lang_code">de_DE</field><field name="translation">Rechnungsnummer</field></record>
+    <record id="label_de_currency" model="arfr.label.dictionary"><field name="source">Currency</field><field name="lang_code">de_DE</field><field name="translation">Währung</field></record>
+    <record id="label_de_description" model="arfr.label.dictionary"><field name="source">Description</field><field name="lang_code">de_DE</field><field name="translation">Beschreibung</field></record>
+    <record id="label_de_qty" model="arfr.label.dictionary"><field name="source">Qty</field><field name="lang_code">de_DE</field><field name="translation">Menge</field></record>
+    <record id="label_de_unit_price" model="arfr.label.dictionary"><field name="source">Unit Price</field><field name="lang_code">de_DE</field><field name="translation">Einzelpreis</field></record>
+    <record id="label_de_discount" model="arfr.label.dictionary"><field name="source">Discount</field><field name="lang_code">de_DE</field><field name="translation">Rabatt</field></record>
+    <record id="label_de_subtotal" model="arfr.label.dictionary"><field name="source">Subtotal</field><field name="lang_code">de_DE</field><field name="translation">Zwischensumme</field></record>
+    <record id="label_de_untaxed" model="arfr.label.dictionary"><field name="source">Untaxed Amount</field><field name="lang_code">de_DE</field><field name="translation">Nettobetrag</field></record>
+    <record id="label_de_tax" model="arfr.label.dictionary"><field name="source">Tax</field><field name="lang_code">de_DE</field><field name="translation">Steuer</field></record>
+    <record id="label_de_total" model="arfr.label.dictionary"><field name="source">Total</field><field name="lang_code">de_DE</field><field name="translation">Summe</field></record>
+    <record id="label_de_notes" model="arfr.label.dictionary"><field name="source">Notes</field><field name="lang_code">de_DE</field><field name="translation">Notizen</field></record>
+    <record id="label_de_signature" model="arfr.label.dictionary"><field name="source">Signature</field><field name="lang_code">de_DE</field><field name="translation">Unterschrift</field></record>
+    <record id="label_de_invoice" model="arfr.label.dictionary"><field name="source">Invoice</field><field name="lang_code">de_DE</field><field name="translation">Rechnung</field></record>
+    <record id="label_de_bilingual" model="arfr.label.dictionary"><field name="source">Bilingual</field><field name="lang_code">de_DE</field><field name="translation">Zweisprachig</field></record>
+    <record id="label_de_business_doc" model="arfr.label.dictionary"><field name="source">Bilingual business document</field><field name="lang_code">de_DE</field><field name="translation">Zweisprachiges Geschäftsdokument</field></record>
+    <record id="label_de_smart_numerals" model="arfr.label.dictionary"><field name="source">Smart numerals and regional currency</field><field name="lang_code">de_DE</field><field name="translation">Intelligente Ziffern und regionale Währung</field></record>
+</odoo>

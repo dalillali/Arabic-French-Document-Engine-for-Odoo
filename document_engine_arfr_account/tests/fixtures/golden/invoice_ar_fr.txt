@@ -1,0 +1,56 @@
+Facture
+Document commercial bilingue
+Bilingue
+ﻓﺎﺗﻮرة
+ﻟﻠﻄﺒﺎﻋﺔ
+ﺟﺎﻫﺰة
+ﺛﺎﻧﻴﺔ
+وﻟﻐﺔ
+ﻋﺮﺑﻴﺔ
+ﻓﺎﺗﻮرة
+Numération intelligente et devise régionale
+Client
+ARFR Demo Customer
+اﻟﻌﻤﻴﻞ
+Numéro
+Date de facture
+١١-٠٥-٢٠٢٦
+اﻟﺘﺎرﻳﺦ
+Devise
+Draft
+USD
+اﻟﺮﻗﻢ
+اﻟﻌﻤﻠﺔ
+اﻟﻮﺻﻒ
+Description
+اﻟﻜﻤﻴﺔ
+Qté
+اﻟﻮﺣﺪة
+ﺳﻌﺮ
+Prix unitaire
+Service conseil
+/
+اﺳﺘﺸﺎرﻳﺔ
+ﺧﺪﻣﺔ
+٢.٠
+$ ٦١٧.٢٨
+اﻟﺨﺼﻢ
+Remise
+٠.٠%
+اﻹﺟﻤﺎﻟﻲ
+Sous-total
+$ ١,٢٣٤.٥٦
+Signature
+Montant HT
+$ ١,٢٣٤.٥٦
+Taxe
+Total
+$ ٠.٠٠
+$ ١,٢٣٤.٥٦
+ﻗﺒﻞ
+اﻟﻤﺒﻠﻎ
+اﻟﻀﺮﻳﺒﺔ
+اﻟﻀﺮﻳﺒﺔ
+اﻹﺟﻤﺎﻟﻲ
+اﻟﺘﻮﻗﻴﻊ
+Generated with Arabic/English + Arabic/French Document Engine

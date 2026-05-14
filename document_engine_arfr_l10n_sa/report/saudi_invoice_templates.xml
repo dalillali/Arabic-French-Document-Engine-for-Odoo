@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document_arfr_saudi_visible" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='total']" position="attributes">
+            <attribute name="class" add="arfr-saudi-visible arfr-zatca-visible arfr-direction-aware" separator=" "/>
+        </xpath>
+        <xpath expr="//table[@name='invoice_line_table']" position="attributes">
+            <attribute name="class" add="arfr-saudi-visible arfr-table" separator=" "/>
+        </xpath>
+    </template>
+</odoo>
